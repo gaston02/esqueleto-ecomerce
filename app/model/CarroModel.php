@@ -11,8 +11,8 @@ class CarroModel{
         $sql = "SELECT * FROM carrito WHERE idUsuario=".$idUsuario." ";
         $sql.= "AND idProducto=".$idProducto." ";
         $sql.= "AND estado=0";
-        $r = $this->db->querySelect($sql);
-        return count($r);
+        $respuesta = $this->db->querySelect($sql);
+        return count($respuesta);
     }
 
     public function agregarProducto($idProducto, $idUsuario){
