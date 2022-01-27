@@ -25,8 +25,7 @@ class adminUsuariosModel{
 
     public function getUsers(){
         $sql = "SELECT * FROM admon WHERE baja=0";
-        $datas = $this->db->querySelect($sql);
-        return $datas;
+        return $this->db->querySelect($sql);
     }
 
     public function getUsersID($id){
