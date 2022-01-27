@@ -30,15 +30,13 @@ class adminUsuariosModel{
     }
 
     public function getUsersID($id){
-        $sql = "SELECT * FROM admon WHERE id=".$id;
-        $datas = $this->db->query($sql);
-        return $datas;
+        $sql = "SELECT * FROM admon WHERE id=".$id; 
+        return $this->db->query($sql);
     }
 
     public function getLlaves($tipo){
-        $sql = "SELECT * FROM llaves WHERE tipo='".$tipo. "' ORDER BY indice DESC";
-        $datas = $this->db->querySelect($sql);
-        return $datas;
+        $sql = "SELECT * FROM llaves WHERE tipo='".$tipo. "' ORDER BY indice DESC"; 
+        return $this->db->querySelect($sql);
     }
 
     public function editarUsuario($datas){
