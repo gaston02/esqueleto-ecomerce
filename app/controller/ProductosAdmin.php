@@ -63,8 +63,12 @@ class ProductosAdmin extends Base{
             if(empty($nombre)){
                 array_push($errores,"El nombre es requerido");
             }
-            if(!is_numeric($precio)){
-                array_push($errores,"El precio debe ser un numero");
+            if(!empty($precio)){
+                if(!is_numeric($precio)){
+                    array_push($errores,"El precio debe ser un numero");
+                }
+            }else{
+                array_push($errores,"El precio es requerido");
             }
             if(!empty($descuento)){
                 if(!is_numeric($descuento)){
