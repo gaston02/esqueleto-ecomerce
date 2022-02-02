@@ -38,14 +38,12 @@ class ProductosModel{
 
     public function getProductos(){
         $sql = "SELECT * FROM productos WHERE baja=0";
-        $datas = $this->db->querySelect($sql);
-        return $datas;
+        return $this->db->querySelect($sql);
     }
 
     public function getProductosID($id){
-        $sql = "SELECT * FROM productos WHERE id=".$id;
-        $datas = $this->db->query($sql);
-        return $datas;
+        $sql = "SELECT * FROM productos WHERE id=".$id; 
+        return $this->db->query($sql);
     }
 
     public function getLlaves($tipo){
@@ -56,16 +54,13 @@ class ProductosModel{
             $order = "ASC";
         }
         $sql = "SELECT * FROM llaves WHERE tipo='".$tipo. "' ORDER BY indice ".$order." ";
-        $datas = $this->db->querySelect($sql);
-        return $datas;
+        return $this->db->querySelect($sql);
     }
 
     public function getCatalogos(){
-        $sql = "SELECT id, nombre, tipo FROM productos WHERE baja=0 AND status!=0 ORDER BY tipo, nombre";
-        $datas = $this->db->querySelect($sql);
-        return $datas;
+        $sql = "SELECT id, nombre, tipo FROM productos WHERE baja=0 AND status!=1 ORDER BY tipo, nombre";
+        return $this->db->querySelect($sql);
     }
-
 
     public function editarProducto($datas){
         $salida = false;
@@ -109,15 +104,13 @@ class ProductosModel{
     }
 
     public function getMasVendidos(){
-        $sql = "SELECT * FROM productos WHERE masVendido=1 AND baja=0 LIMIT 8";
-        $datas = $this->db->querySelect($sql);
-        return $datas;
+        $sql = "SELECT * FROM productos WHERE masVendido=1 AND baja=0 LIMIT 8"; 
+        return $this->db->querySelect($sql);
     }
 
     public function getNuevos(){
-        $sql = "SELECT * FROM productos WHERE nuevos=1 AND baja=0 LIMIT 8";
-        $datas = $this->db->querySelect($sql);
-        return $datas;
+        $sql = "SELECT * FROM productos WHERE nuevos=1 AND baja=0 LIMIT 8"; 
+        return $this->db->querySelect($sql);
     }
 }
 ?>
