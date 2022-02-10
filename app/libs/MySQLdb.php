@@ -36,9 +36,8 @@ class MySQLdb{
         return $datas;
     }
 
-    function queryNoSelect($sql){
-        $r = mysqli_query($this->conn, $sql);
-        return $r;
+    function queryNoSelect($sql){ 
+        return mysqli_query($this->conn, $sql);
     }
 
     function querySelect($sql){
